@@ -7,12 +7,12 @@ const questions = [
     {
         title: "Color of Lemon?",
         trueAnswer: "Yellow",
-        variants: [ "Green", "Yellow", "Grey"],
+        variants: ["Green", "Yellow", "Grey"],
     },
     {
         title: "Color of Apple?",
         trueAnswer: "Both",
-        variants: [ "Red", "Green", "Both"],
+        variants: ["Red", "Green", "Both"],
     },
     {
         title: "Is Purple Grey?",
@@ -24,7 +24,7 @@ const questions = [
         trueAnswer: "Maybe",
         variants: ["Yes", "No", "Maybe"],
     },
-    
+
 ];
 
 class QuestionGame {
@@ -99,15 +99,16 @@ function selectItem(userChoose) {
             console.log("duz tapdi");
             gameQ.point++;
             yourPoint.innerHTML = gameQ.point;
-
+            progressBar.style.width = `${gameQ.point * 100/5}%`;
+            // progressBar.style.width = `${gameQ.point * 100/5}%`;
             if (answerBg.classList.contains("bg-warning")) {
                 answerBg.classList.remove("bg-warning");
                 answerBg.classList.add("bg-success");
-                progressBar.style.width = `${gameQ.incrementPoint() * 10}%`;
+               
             } else if (answerBg.classList.contains("bg-danger")) {
                 answerBg.classList.remove("bg-danger");
                 answerBg.classList.add("bg-success");
-                progressBar.style.width = `${gameQ.incrementPoint() * 10}%`;
+               
             }
 
         } else {
