@@ -1,39 +1,30 @@
 const questions = [
     {
-        title: "Question 1",
-        trueAnswer: "answer1",
-        variants: ["answer1", "answer2", "answer3"],
+        title: "Color of Sun?",
+        trueAnswer: "Yellow",
+        variants: ["Yellow", "Green", "Grey"],
     },
     {
-        title: "Question 2",
-        trueAnswer: "answer2",
-        variants: ["answer1", "answer2", "answer3"],
+        title: "Color of Lemon?",
+        trueAnswer: "Yellow",
+        variants: [ "Green", "Yellow", "Grey"],
     },
     {
-        title: "Question 3",
-        trueAnswer: "answer1",
-        variants: ["answer1", "answer2", "answer3"],
+        title: "Color of Apple?",
+        trueAnswer: "Both",
+        variants: [ "Red", "Green", "Both"],
     },
     {
-        title: "Question 4",
-        trueAnswer: "answer3",
-        variants: ["answer1", "answer2", "answer3"],
+        title: "Is Purple Grey?",
+        trueAnswer: "No",
+        variants: ["Yes", "No", "Maybe"],
     },
     {
-        title: "Question 5",
-        trueAnswer: "answer2",
-        variants: ["answer1", "answer2", "answer3"],
+        title: "Color is Abstract?",
+        trueAnswer: "Maybe",
+        variants: ["Yes", "No", "Maybe"],
     },
-    {
-        title: "Question 6",
-        trueAnswer: "answer3",
-        variants: ["answer1", "answer2", "answer3"],
-    },
-    {
-        title: "Question 7",
-        trueAnswer: "answer2",
-        variants: ["answer1", "answer2", "answer3"],
-    },
+    
 ];
 
 class QuestionGame {
@@ -101,7 +92,7 @@ let finish = document.querySelector("#finish");
 
 
 function selectItem(userChoose) {
-    if (gameQ.currentQuestion.title == "Question 7") {
+    if (gameQ.currentQuestion.title == "Color is Abstract?") {
         finish.innerHTML = "Finished";
     } else {
         if (userChoose == gameQ.currentQuestion.trueAnswer) {
