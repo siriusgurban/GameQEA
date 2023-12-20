@@ -89,18 +89,21 @@ let answerBg = document.querySelector("#answerBg");
 let yourPoint = document.querySelector("#yourPoint");
 let progressBar = document.querySelector(".progress-bar");
 let finish = document.querySelector("#finish");
+let proBar = 20;
 
 
 function selectItem(userChoose) {
-    if (gameQ.currentQuestion.title == "Color is Abstract?") {
-        finish.innerHTML = "Finished";
-    } else {
+    progressBar.style.width = `${proBar}%`;
+    proBar+=20;
+   
         if (userChoose == gameQ.currentQuestion.trueAnswer) {
             console.log("duz tapdi");
             gameQ.point++;
             yourPoint.innerHTML = gameQ.point;
-            progressBar.style.width = `${gameQ.point * 100/5}%`;
-            // progressBar.style.width = `${gameQ.point * 100/5}%`;
+            if (gameQ.currentQuestion.title == "Color is Abstract?") {
+                finish.innerHTML = "Finished";
+                yourPoint.innerHTML = gameQ.point;
+            }
             if (answerBg.classList.contains("bg-warning")) {
                 answerBg.classList.remove("bg-warning");
                 answerBg.classList.add("bg-success");
@@ -122,7 +125,7 @@ function selectItem(userChoose) {
             }
 
         }
-    }
+    
 
 
 
